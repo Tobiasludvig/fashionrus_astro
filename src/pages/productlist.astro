@@ -1,14 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
+import ProductHeader from "../components/ProductHeader.astro";
 //const data = await fetch("https://kea-alt-del.dk/t7/api/products").then((res) => res.json);
 const data = await fetch("https://kea-alt-del.dk/t7/api/products").then((res) => res.json());
 console.log(data);
 ---
 
-<Layout>
+<Layout classes="productlist">
   <h2>Produktliste</h2>
-  {data.map((element) => <ProductCard data={element} />)};
+  <main>
+    {data.map((element) => <ProductCard data={element} />)};
+  </main>
 </Layout>
 
 <!-- test -->
